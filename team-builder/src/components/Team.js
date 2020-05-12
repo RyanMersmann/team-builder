@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TeamMembers = props => {
+const Team = props => {
     // console.log(props.teams);
 
     return (
@@ -16,4 +16,4 @@ const TeamMembers = props => {
     );
 };
 
-export default TeamMembers;
+export default Team;

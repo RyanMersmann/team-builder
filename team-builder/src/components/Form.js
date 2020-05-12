@@ -6,10 +6,15 @@ import { useState } from 'react';
 //create useState
 
 const Form = props => {
-    const [team, setTeam] = useState({name: '', email: '', role:''});
+    const [team, setTeam] = useState({
+        name: '', 
+        email: '',
+         role:''
+    });
 
-    const handleChanges = e => {
-        setTeam({...team, [e.target.name]: e.target.value});
+    const changeHandler = e => {
+        setTeam({...team, 
+            [e.target.name]: e.target.value});
     };
 
     const submitForm = e => {
@@ -25,36 +30,28 @@ const Form = props => {
                 id='name'
                 type='text'
                 name='name'
-                onChange={handleChanges}
+                onChange={changeHandler}
                 value={team.name}
             />
-
-            <br></br>
-
+            <br /><br />
             <label htmlFor='email'>Email</label>
             <input 
                 id='email'
                 type='text'
                 name='email'
-                onChange={handleChanges}
+                onChange={changeHandler}
                 value={team.email}
             />
-
-
-            <br></br>
-
-
+            <br /><br />
             <label htmlFor='role'>Role</label>
             <input 
                 id='role'
                 type='text'
                 name='role'
-                onChange={handleChanges}
+                onChange={changeHandler}
                 value={team.role}
             />
-            
-            <br></br>
-
+            <br /><br />
             <button type='submit'>Add Team Member</button>
         </form>
     )
