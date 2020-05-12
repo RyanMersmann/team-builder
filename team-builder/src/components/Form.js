@@ -1,9 +1,19 @@
 import React from 'react';
 import { useState } from 'react';
+import styled from 'styled-components';
 
 //create list of team members
 //assign key/value pairs to team members
 //create useState
+
+const FormStyle = styled.form`
+    border-bottom: 1px solid pink;
+    padding-bottom: 25px;
+
+    label {
+        padding-right: 10px;
+    }
+`;
 
 const Form = props => {
     const [team, setTeam] = useState({
@@ -24,8 +34,8 @@ const Form = props => {
     };
 
     return(
-        <form onSubmit={submitForm}>
-            <label htmlFor='name'>Name</label>
+        <FormStyle onSubmit={submitForm}>
+            <label htmlFor='name'>Name:</label>
             <input
                 id='name'
                 type='text'
@@ -34,7 +44,7 @@ const Form = props => {
                 value={team.name}
             />
             <br /><br />
-            <label htmlFor='email'>Email</label>
+            <label htmlFor='email'>Email:</label>
             <input 
                 id='email'
                 type='text'
@@ -43,7 +53,7 @@ const Form = props => {
                 value={team.email}
             />
             <br /><br />
-            <label htmlFor='role'>Role</label>
+            <label htmlFor='role'>Role:</label>
             <input 
                 id='role'
                 type='text'
@@ -53,7 +63,7 @@ const Form = props => {
             />
             <br /><br />
             <button type='submit'>Add Team Member</button>
-        </form>
+        </FormStyle>
     )
 }
 
